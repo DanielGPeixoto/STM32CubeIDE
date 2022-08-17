@@ -1,0 +1,95 @@
+23:53:26 **** Build of configuration Debug for project 7_uart_tx2_printf_modular ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc "../Src/uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/uart.d" -MT"Src/uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/uart.o"
+arm-none-eabi-gcc -o "7_uart_tx2_printf_modular.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/7_uart_tx2_printf_modular/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="7_uart_tx2_printf_modular.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 7_uart_tx2_printf_modular.elf
+ 
+arm-none-eabi-size   7_uart_tx2_printf_modular.elf 
+arm-none-eabi-objdump -h -S  7_uart_tx2_printf_modular.elf  > "7_uart_tx2_printf_modular.list"
+   text	   data	    bss	    dec	    hex	filename
+   4016	    108	   1588	   5712	   1650	7_uart_tx2_printf_modular.elf
+Finished building: default.size.stdout
+ 
+Finished building: 7_uart_tx2_printf_modular.list
+ 
+23:53:57 **** Incremental Build of configuration Debug for project 7_uart_tx2_printf_modular ****
+make -j4 all 
+arm-none-eabi-size   7_uart_tx2_printf_modular.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4016	    108	   1588	   5712	   1650	7_uart_tx2_printf_modular.elf
+Finished building: default.size.stdout
+ 
+23:54:11 **** Incremental Build of configuration Debug for project 7_uart_tx2_printf_modular ****
+make -j4 all 
+arm-none-eabi-size   7_uart_tx2_printf_modular.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4016	    108	   1588	   5712	   1650	7_uart_tx2_printf_modular.elf
+Finished building: default.size.stdout
+ 
+23:59:45 **** Incremental Build of configuration Debug for project 0_LED_TOGGLE_ADDR ****
+make -j4 all 
+arm-none-eabi-size   0_LED_TOGGLE_ADDR.elf 
+   text	   data	    bss	    dec	    hex	filename
+    732	      8	   1568	   2308	    904	0_LED_TOGGLE_ADDR.elf
+Finished building: default.size.stdout
+ 
+23:59:46 **** Incremental Build of configuration Debug for project 1_LED_TOGGLE_ADDR_STRUCT ****
+make -j4 all 
+arm-none-eabi-size   1_LED_TOGGLE_ADDR_STRUCT.elf 
+   text	   data	    bss	    dec	    hex	filename
+    732	      8	   1568	   2308	    904	1_LED_TOGGLE_ADDR_STRUCT.elf
+Finished building: default.size.stdout
+ 
+23:59:47 **** Incremental Build of configuration Debug for project 2_gpio_output ****
+make -j4 all 
+arm-none-eabi-size   2_gpio_output.elf 
+   text	   data	    bss	    dec	    hex	filename
+    732	      8	   1568	   2308	    904	2_gpio_output.elf
+Finished building: default.size.stdout
+ 
+23:59:48 **** Incremental Build of configuration Debug for project 3_gpio_output_bsrr ****
+make -j4 all 
+arm-none-eabi-size   3_gpio_output_bsrr.elf 
+   text	   data	    bss	    dec	    hex	filename
+    768	      8	   1568	   2344	    928	3_gpio_output_bsrr.elf
+Finished building: default.size.stdout
+ 
+23:59:49 **** Incremental Build of configuration Debug for project 4_gpio_Input ****
+make -j4 all 
+arm-none-eabi-size   4_gpio_Input.elf 
+   text	   data	    bss	    dec	    hex	filename
+    776	      8	   1568	   2352	    930	4_gpio_Input.elf
+Finished building: default.size.stdout
+ 
+23:59:50 **** Incremental Build of configuration Debug for project 5_uart_tx ****
+make -j4 all 
+arm-none-eabi-size   5_uart_tx.elf 
+   text	   data	    bss	    dec	    hex	filename
+    976	      8	   1568	   2552	    9f8	5_uart_tx.elf
+Finished building: default.size.stdout
+ 
+23:59:51 **** Incremental Build of configuration Debug for project 6_uart_tx2_printf ****
+make -j4 all 
+arm-none-eabi-size   6_uart_tx2_printf.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4016	    108	   1588	   5712	   1650	6_uart_tx2_printf.elf
+Finished building: default.size.stdout
+ 
+23:59:52 **** Incremental Build of configuration Debug for project 7_uart_tx2_printf_modular ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/uart.d" -MT"Src/uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/uart.o"
+arm-none-eabi-gcc -o "7_uart_tx2_printf_modular.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/7_uart_tx2_printf_modular/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="7_uart_tx2_printf_modular.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 7_uart_tx2_printf_modular.elf
+ 
+arm-none-eabi-size   7_uart_tx2_printf_modular.elf 
+arm-none-eabi-objdump -h -S  7_uart_tx2_printf_modular.elf  > "7_uart_tx2_printf_modular.list"
+   text	   data	    bss	    dec	    hex	filename
+   4016	    108	   1588	   5712	   1650	7_uart_tx2_printf_modular.elf
+Finished building: default.size.stdout
+ 
+Finished building: 7_uart_tx2_printf_modular.list
+ 

@@ -1,0 +1,55 @@
+/*UART Transmitter Driver using USART2 Peripheral
+ *
+ * 1 - Enable USART2EN Clock through the  RCC_APB1ENR1 - APB1 peripheral clock enable register 1
+ * 2 - Since the USART uses wired connection, we need to configure the PINs. In order to do that, search for alternate function and locate
+ * PINs used for USART2. We find that the USART2 TX and RX PINs are PA2 and PA3 respectively.
+ * 3 - Configure PINS in the needed Alternate Function mode in the GPIO MODE Register
+ * 4 -
+ *
+ *
+ * */
+
+#include "stm32l4xx.h"
+
+
+#define PIN_5				(1U<<5)
+#define	LED_PIN				PIN_5
+
+#define PIN_13				(1U<<13)
+#define	BTN_PIN				PIN_13
+
+
+#define GPIOAEN				(1U<<0)										//Enable IO port A clock enable - shifts 1 to position 0
+#define GPIOCEN				(1U<<2)										//Enable IO port A clock enable - shifts 1 to position 2
+#define USART2EN			(1U<<17)									//Enable USART2 Clock - shifts 1 to position 17
+
+int main(void){
+
+	RCC->AHB2ENR 	|= GPIOAEN;											//Enable IO PORTA Clock
+	RCC->AHB2ENR 	|= GPIOCEN;											//Enable IO PORTC Clock
+	RCC->APB1ENR1	|= USART2EN;										//Enable USART2 Clock
+
+	/*sets PIN5 PORTA as general mode output. Bit 10 and 11 of MODE REGISTER as 01 */
+	GPIOA->MODER |= (1U<<10);
+	GPIOA->MODER &=~ (1U<<11);
+	/*sets P13 PORTC as input mode. Bit 26 and 27 of MODE REGISTER as 00*/
+	GPIOC->MODER &=~ (1U<<26);
+	GPIOC->MODER &=~ (1U<<27);
+	/*sets PA2 and PA3 in Alternate Function Mode. Bits 4 to 7. 10: Alternate Function Mode*/
+	GPIOA->MODER &=~ (1U<<4);
+
+	GPIOA->MODER &=~ (1U<<6);
+
+
+	while(1){
+
+		/*check if button is pressed  -> & - and operation against value 1 at the 13th bit in the Input Data Register*/
+		if(GPIOC->IDR & BTN_PIN){
+			GPIOA->BSRR |= (1U<<5);												//Sets PIN 5 from PORTA
+		}else{
+			GPIOA->BSRR |= (1U<<21);											//Resets PIN 5 from PORTA
+
+		}
+	}
+}
+

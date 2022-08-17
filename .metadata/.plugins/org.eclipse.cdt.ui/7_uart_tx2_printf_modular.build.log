@@ -1,0 +1,18 @@
+23:59:52 **** Incremental Build of configuration Debug for project 7_uart_tx2_printf_modular ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/uart.d" -MT"Src/uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/uart.o"
+arm-none-eabi-gcc -o "7_uart_tx2_printf_modular.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/7_uart_tx2_printf_modular/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="7_uart_tx2_printf_modular.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 7_uart_tx2_printf_modular.elf
+ 
+arm-none-eabi-size   7_uart_tx2_printf_modular.elf 
+arm-none-eabi-objdump -h -S  7_uart_tx2_printf_modular.elf  > "7_uart_tx2_printf_modular.list"
+   text	   data	    bss	    dec	    hex	filename
+   4016	    108	   1588	   5712	   1650	7_uart_tx2_printf_modular.elf
+Finished building: default.size.stdout
+ 
+Finished building: 7_uart_tx2_printf_modular.list
+ 
+
+23:59:53 Build Finished. 0 errors, 0 warnings. (took 1s.325ms)
+

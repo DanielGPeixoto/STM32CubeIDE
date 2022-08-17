@@ -1,0 +1,10 @@
+23:59:46 **** Incremental Build of configuration Debug for project 1_LED_TOGGLE_ADDR_STRUCT ****
+make -j4 all 
+arm-none-eabi-size   1_LED_TOGGLE_ADDR_STRUCT.elf 
+   text	   data	    bss	    dec	    hex	filename
+    732	      8	   1568	   2308	    904	1_LED_TOGGLE_ADDR_STRUCT.elf
+Finished building: default.size.stdout
+ 
+
+23:59:47 Build Finished. 0 errors, 0 warnings. (took 871ms)
+
