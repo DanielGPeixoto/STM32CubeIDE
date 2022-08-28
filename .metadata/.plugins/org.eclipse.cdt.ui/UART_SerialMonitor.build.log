@@ -1,0 +1,22 @@
+22:30:35 **** Incremental Build of configuration Debug for project UART_SerialMonitor ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/uart.d" -MT"Src/uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/uart.o"
+../Src/uart.c: In function 'uartx_tx_init':
+../Src/uart.c:115:1: warning: control reaches end of non-void function [-Wreturn-type]
+  115 | }
+      | ^
+arm-none-eabi-gcc -o "UART_SerialMonitor.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/UART_SerialMonitor/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_SerialMonitor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UART_SerialMonitor.elf
+ 
+arm-none-eabi-size   UART_SerialMonitor.elf 
+arm-none-eabi-objdump -h -S  UART_SerialMonitor.elf  > "UART_SerialMonitor.list"
+   text	   data	    bss	    dec	    hex	filename
+   6044	    112	   2616	   8772	   2244	UART_SerialMonitor.elf
+Finished building: default.size.stdout
+ 
+Finished building: UART_SerialMonitor.list
+ 
+
+22:30:40 Build Finished. 0 errors, 1 warnings. (took 5s.59ms)
+

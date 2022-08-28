@@ -1,29 +1,201 @@
-23:05:01 **** Incremental Build of configuration Debug for project 8_uart_rxtx ****
+08:58:07 **** Incremental Build of configuration Debug for project 8_uart_tx_printf_modular ****
 make -j4 all 
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "8_uart_tx_printf_modular.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/8_uart_tx_printf_modular/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="8_uart_tx_printf_modular.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 8_uart_tx_printf_modular.elf
+ 
+arm-none-eabi-size   8_uart_tx_printf_modular.elf 
+arm-none-eabi-objdump -h -S  8_uart_tx_printf_modular.elf  > "8_uart_tx_printf_modular.list"
+   text	   data	    bss	    dec	    hex	filename
+   1132	      8	   1568	   2708	    a94	8_uart_tx_printf_modular.elf
+Finished building: default.size.stdout
+ 
+Finished building: 8_uart_tx_printf_modular.list
+ 
+08:58:11 **** Incremental Build of configuration Debug for project 8_uart_tx_printf_modular ****
+make -j4 all 
+arm-none-eabi-size   8_uart_tx_printf_modular.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1132	      8	   1568	   2708	    a94	8_uart_tx_printf_modular.elf
+Finished building: default.size.stdout
+ 
+08:59:01 **** Incremental Build of configuration Debug for project 8_uart_tx_printf_modular ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "8_uart_tx_printf_modular.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/8_uart_tx_printf_modular/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="8_uart_tx_printf_modular.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 8_uart_tx_printf_modular.elf
+ 
+arm-none-eabi-size   8_uart_tx_printf_modular.elf 
+arm-none-eabi-objdump -h -S  8_uart_tx_printf_modular.elf  > "8_uart_tx_printf_modular.list"
+   text	   data	    bss	    dec	    hex	filename
+   1132	      8	   1568	   2708	    a94	8_uart_tx_printf_modular.elf
+Finished building: default.size.stdout
+ 
+Finished building: 8_uart_tx_printf_modular.list
+ 
+09:00:00 **** Incremental Build of configuration Debug for project 8_uart_tx_printf_modular ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "8_uart_tx_printf_modular.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/8_uart_tx_printf_modular/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="8_uart_tx_printf_modular.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 8_uart_tx_printf_modular.elf
+ 
+arm-none-eabi-size   8_uart_tx_printf_modular.elf 
+arm-none-eabi-objdump -h -S  8_uart_tx_printf_modular.elf  > "8_uart_tx_printf_modular.list"
+   text	   data	    bss	    dec	    hex	filename
+   1132	      8	   1568	   2708	    a94	8_uart_tx_printf_modular.elf
+Finished building: default.size.stdout
+ 
+Finished building: 8_uart_tx_printf_modular.list
+ 
+09:51:28 **** Incremental Build of configuration Debug for project 8_uart_tx_printf_modular ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "8_uart_tx_printf_modular.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/8_uart_tx_printf_modular/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="8_uart_tx_printf_modular.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 8_uart_tx_printf_modular.elf
+ 
+arm-none-eabi-size   8_uart_tx_printf_modular.elf 
+arm-none-eabi-objdump -h -S  8_uart_tx_printf_modular.elf  > "8_uart_tx_printf_modular.list"
+   text	   data	    bss	    dec	    hex	filename
+   1132	      8	   1568	   2708	    a94	8_uart_tx_printf_modular.elf
+Finished building: default.size.stdout
+ 
+Finished building: 8_uart_tx_printf_modular.list
+ 
+09:55:38 **** Incremental Build of configuration Debug for project 8_uart_tx_printf_modular ****
+make -j4 all 
 arm-none-eabi-gcc "../Src/uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/uart.d" -MT"Src/uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/uart.o"
-arm-none-eabi-gcc -o "8_uart_rxtx.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/8_uart_rxtx/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="8_uart_rxtx.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 8_uart_rxtx.elf
+arm-none-eabi-gcc -o "8_uart_tx_printf_modular.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/8_uart_tx_printf_modular/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="8_uart_tx_printf_modular.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 8_uart_tx_printf_modular.elf
  
-arm-none-eabi-size   8_uart_rxtx.elf 
-arm-none-eabi-objdump -h -S  8_uart_rxtx.elf  > "8_uart_rxtx.list"
+arm-none-eabi-size   8_uart_tx_printf_modular.elf 
+arm-none-eabi-objdump -h -S  8_uart_tx_printf_modular.elf  > "8_uart_tx_printf_modular.list"
    text	   data	    bss	    dec	    hex	filename
-   1144	      8	   1568	   2720	    aa0	8_uart_rxtx.elf
+   1160	      8	   1568	   2736	    ab0	8_uart_tx_printf_modular.elf
 Finished building: default.size.stdout
-Finished building: 8_uart_rxtx.list
  
+Finished building: 8_uart_tx_printf_modular.list
  
-23:05:20 **** Incremental Build of configuration Debug for project 8_uart_rxtx ****
+09:56:10 **** Incremental Build of configuration Debug for project 8_uart_tx_printf_modular ****
 make -j4 all 
-arm-none-eabi-size   8_uart_rxtx.elf 
+arm-none-eabi-size   8_uart_tx_printf_modular.elf 
    text	   data	    bss	    dec	    hex	filename
-   1144	      8	   1568	   2720	    aa0	8_uart_rxtx.elf
+   1160	      8	   1568	   2736	    ab0	8_uart_tx_printf_modular.elf
 Finished building: default.size.stdout
  
-23:05:43 **** Incremental Build of configuration Debug for project 8_uart_rxtx ****
+09:57:28 **** Incremental Build of configuration Debug for project 8_uart_tx_printf_modular ****
 make -j4 all 
-arm-none-eabi-size   8_uart_rxtx.elf 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "8_uart_tx_printf_modular.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/8_uart_tx_printf_modular/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="8_uart_tx_printf_modular.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 8_uart_tx_printf_modular.elf
+ 
+arm-none-eabi-size   8_uart_tx_printf_modular.elf 
+arm-none-eabi-objdump -h -S  8_uart_tx_printf_modular.elf  > "8_uart_tx_printf_modular.list"
    text	   data	    bss	    dec	    hex	filename
-   1144	      8	   1568	   2720	    aa0	8_uart_rxtx.elf
+   1160	      8	   1568	   2736	    ab0	8_uart_tx_printf_modular.elf
 Finished building: default.size.stdout
+ 
+Finished building: 8_uart_tx_printf_modular.list
+ 
+09:58:22 **** Incremental Build of configuration Debug for project 8_uart_tx_printf_modular ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/uart.d" -MT"Src/uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/uart.o"
+arm-none-eabi-gcc -o "8_uart_tx_printf_modular.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/8_uart_tx_printf_modular/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="8_uart_tx_printf_modular.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 8_uart_tx_printf_modular.elf
+ 
+arm-none-eabi-size   8_uart_tx_printf_modular.elf 
+arm-none-eabi-objdump -h -S  8_uart_tx_printf_modular.elf  > "8_uart_tx_printf_modular.list"
+   text	   data	    bss	    dec	    hex	filename
+   1164	      8	   1568	   2740	    ab4	8_uart_tx_printf_modular.elf
+Finished building: default.size.stdout
+ 
+Finished building: 8_uart_tx_printf_modular.list
+ 
+10:00:35 **** Incremental Build of configuration Debug for project 8_uart_tx_printf_modular ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "8_uart_tx_printf_modular.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/8_uart_tx_printf_modular/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="8_uart_tx_printf_modular.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 8_uart_tx_printf_modular.elf
+ 
+arm-none-eabi-size   8_uart_tx_printf_modular.elf 
+arm-none-eabi-objdump -h -S  8_uart_tx_printf_modular.elf  > "8_uart_tx_printf_modular.list"
+   text	   data	    bss	    dec	    hex	filename
+   1164	      8	   1568	   2740	    ab4	8_uart_tx_printf_modular.elf
+Finished building: default.size.stdout
+ 
+Finished building: 8_uart_tx_printf_modular.list
+ 
+10:01:00 **** Incremental Build of configuration Debug for project 8_uart_tx_printf_modular ****
+make -j4 all 
+arm-none-eabi-size   8_uart_tx_printf_modular.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1164	      8	   1568	   2740	    ab4	8_uart_tx_printf_modular.elf
+Finished building: default.size.stdout
+ 
+10:01:56 **** Incremental Build of configuration Debug for project 8_uart_tx_printf_modular ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "8_uart_tx_printf_modular.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/8_uart_tx_printf_modular/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="8_uart_tx_printf_modular.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 8_uart_tx_printf_modular.elf
+ 
+arm-none-eabi-size   8_uart_tx_printf_modular.elf 
+arm-none-eabi-objdump -h -S  8_uart_tx_printf_modular.elf  > "8_uart_tx_printf_modular.list"
+   text	   data	    bss	    dec	    hex	filename
+   1164	      8	   1568	   2740	    ab4	8_uart_tx_printf_modular.elf
+Finished building: default.size.stdout
+ 
+Finished building: 8_uart_tx_printf_modular.list
+ 
+10:02:09 **** Incremental Build of configuration Debug for project 8_uart_tx_printf_modular ****
+make -j4 all 
+arm-none-eabi-size   8_uart_tx_printf_modular.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1164	      8	   1568	   2740	    ab4	8_uart_tx_printf_modular.elf
+Finished building: default.size.stdout
+ 
+10:04:36 **** Incremental Build of configuration Debug for project 8_uart_tx_printf_modular ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:35:31: warning: multi-character character constant [-Wmultichar]
+   35 |   uart_write_function(USART2, '24');                //Writes the letter 'Y' through the UART3
+      |                               ^~~~
+../Src/main.c:35:31: warning: unsigned conversion from 'int' to 'uint8_t' {aka 'unsigned char'} changes value from '12852' to '52' [-Woverflow]
+arm-none-eabi-gcc -o "8_uart_tx_printf_modular.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/8_uart_tx_printf_modular/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="8_uart_tx_printf_modular.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 8_uart_tx_printf_modular.elf
+ 
+arm-none-eabi-size   8_uart_tx_printf_modular.elf 
+arm-none-eabi-objdump -h -S  8_uart_tx_printf_modular.elf  > "8_uart_tx_printf_modular.list"
+   text	   data	    bss	    dec	    hex	filename
+   1164	      8	   1568	   2740	    ab4	8_uart_tx_printf_modular.elf
+Finished building: default.size.stdout
+ 
+Finished building: 8_uart_tx_printf_modular.list
+ 
+10:05:02 **** Incremental Build of configuration Debug for project 8_uart_tx_printf_modular ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "8_uart_tx_printf_modular.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/8_uart_tx_printf_modular/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="8_uart_tx_printf_modular.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 8_uart_tx_printf_modular.elf
+ 
+arm-none-eabi-size   8_uart_tx_printf_modular.elf 
+arm-none-eabi-objdump -h -S  8_uart_tx_printf_modular.elf  > "8_uart_tx_printf_modular.list"
+   text	   data	    bss	    dec	    hex	filename
+   1164	      8	   1568	   2740	    ab4	8_uart_tx_printf_modular.elf
+Finished building: default.size.stdout
+ 
+Finished building: 8_uart_tx_printf_modular.list
+ 
+10:06:10 **** Incremental Build of configuration Debug for project 8_uart_tx_printf_modular ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "8_uart_tx_printf_modular.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/8_uart_tx_printf_modular/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="8_uart_tx_printf_modular.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 8_uart_tx_printf_modular.elf
+ 
+arm-none-eabi-size   8_uart_tx_printf_modular.elf 
+arm-none-eabi-objdump -h -S  8_uart_tx_printf_modular.elf  > "8_uart_tx_printf_modular.list"
+   text	   data	    bss	    dec	    hex	filename
+   1172	     12	   1564	   2748	    abc	8_uart_tx_printf_modular.elf
+Finished building: default.size.stdout
+ 
+Finished building: 8_uart_tx_printf_modular.list
  

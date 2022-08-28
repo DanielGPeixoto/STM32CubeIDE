@@ -38,10 +38,13 @@ int main(void){
 	while(1){
 		key = uart2_read(USART2);
 
+
 		if(key == 'Y')
 		{
+			uart2_write(USART2, 'A');																//Writes the letter 'Y' through the UART2
 			GPIOA->BSRR |= (1U<<5);												//Sets PIN 5 from PORTA
 		}else{
+			uart2_write(USART2, 'B');																//Writes the letter 'Y' through the UART2
 			GPIOA->BSRR |= (1U<<21);											//Resets PIN 5 from PORTA
 		}
 	}

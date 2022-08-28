@@ -1,0 +1,5 @@
+../Src/uart.c:43:6:uart2_tx_init	8	static
+../Src/uart.c:78:6:uart3_tx_init	8	static
+../Src/uart.c:113:6:uart_write_function	16	static
+../Src/uart.c:124:13:uart_set_baudrate	24	static
+../Src/uart.c:129:17:compute_uart_div	16	static

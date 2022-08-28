@@ -1,10 +1,18 @@
-23:05:43 **** Incremental Build of configuration Debug for project 8_uart_rxtx ****
+19:48:46 **** Incremental Build of configuration Debug for project 8_uart_rxtx ****
 make -j4 all 
-arm-none-eabi-size   8_uart_rxtx.elf 
-   text	   data	    bss	    dec	    hex	filename
-   1144	      8	   1568	   2720	    aa0	8_uart_rxtx.elf
-Finished building: default.size.stdout
- 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/uart.d" -MT"Src/uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/uart.o"
+In file included from ../Src/main.c:19:
+../Inc/uart.h:14:13: warning: 'uart2_write' used but never defined
+   14 | static void uart2_write(USART_TypeDef *USARTx,uint8_t ch);
+      |             ^~~~~~~~~~~
+arm-none-eabi-gcc -o "8_uart_rxtx.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/8_uart_rxtx/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="8_uart_rxtx.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+/opt/st/stm32cubeide_1.10.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.linux64_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld: ./Src/main.o: in function `main':
+/home/daniel/STM32CubeIDE/8_uart_rxtx/Debug/../Src/main.c:44: undefined reference to `uart2_write'
+/opt/st/stm32cubeide_1.10.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.linux64_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld: /home/daniel/STM32CubeIDE/8_uart_rxtx/Debug/../Src/main.c:47: undefined reference to `uart2_write'
+collect2: error: ld returned 1 exit status
+make: *** [makefile:63: 8_uart_rxtx.elf] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
 
-23:05:44 Build Finished. 0 errors, 0 warnings. (took 844ms)
+19:48:49 Build Failed. 4 errors, 1 warnings. (took 2s.725ms)
 

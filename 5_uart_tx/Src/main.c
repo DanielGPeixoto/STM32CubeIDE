@@ -39,8 +39,9 @@ int main(void){
 
 
 	while(1){
-		for(int i = 0; i<10000; i++){};
-		uart2_write(USART2, 'Y');																//Writes the letter 'Y' through the UART2
+
+		uart2_write(USART2, '1');																//Writes the letter 'Y' through the UART2
+
 	}
 }
 
