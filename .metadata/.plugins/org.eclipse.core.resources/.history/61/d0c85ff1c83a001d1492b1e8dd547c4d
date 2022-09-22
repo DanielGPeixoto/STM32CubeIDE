@@ -60,7 +60,7 @@ int main(void){
 		//Clear the Update Event Flag once it has happened
 		TIM1->SR &=~ SR_UIF;
 
-		iAnalogValue = adc_read();
+		//iAnalogValue = adc_read();
 		printf("Analog Value: %d\n\r", iAnalogValue);
 		GPIOA->ODR ^= LED_PIN;
 		//printf("1 Segundo passou\n");
