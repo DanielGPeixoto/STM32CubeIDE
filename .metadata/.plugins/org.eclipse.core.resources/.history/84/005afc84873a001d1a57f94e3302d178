@@ -1,0 +1,19 @@
+/*
+ * tim.h
+ *
+ *  Created on: 22/09/2022
+ *      Author: daniel
+ */
+
+#ifndef TIM_H_
+#define TIM_H_
+
+#include "stm32l4xx.h"
+#include <stdint.h>
+
+
+tim_1hz_init(void);
+
+
+
+#endif /* TIM_H_ */
