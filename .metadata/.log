@@ -5292,3 +5292,21 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64
 
 !ENTRY org.eclipse.cdt.core 1 0 2022-09-21 14:56:31.932
 !MESSAGE Indexed '9_ADC_Continuous_Conversion' (4 sources, 8 headers) in 1,26 sec: 1 157 declarations; 1 367 references; 16 unresolved inclusions; 29 syntax errors; 889 unresolved names (26%)
+!SESSION 2022-09-21 23:18:42.072 -----------------------------------------------
+eclipse.buildId=Version 1.10.1
+java.version=11.0.14.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-09-21 23:18:47.503
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-09-21 23:18:59.505
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-09-21 23:18:59.580
+!MESSAGE Log4j initialized with config file /home/daniel/STM32CubeIDE/.metadata/.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-09-21 23:19:26.084
+!MESSAGE Started RMI Server, listening on port 41337

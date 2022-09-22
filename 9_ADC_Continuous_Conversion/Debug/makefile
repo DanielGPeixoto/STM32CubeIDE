@@ -33,34 +33,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := 8_uart_rxtx
+BUILD_ARTIFACT_NAME := 9_ADC_Continuous_Conversion
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-8_uart_rxtx.elf \
+9_ADC_Continuous_Conversion.elf \
 
 MAP_FILES += \
-8_uart_rxtx.map \
+9_ADC_Continuous_Conversion.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-8_uart_rxtx.list \
+9_ADC_Continuous_Conversion.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: 8_uart_rxtx.elf secondary-outputs
+main-build: 9_ADC_Continuous_Conversion.elf secondary-outputs
 
 # Tool invocations
-8_uart_rxtx.elf 8_uart_rxtx.map: $(OBJS) $(USER_OBJS) /home/daniel/STM32CubeIDE/8_uart_rxtx/STM32L476RGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "8_uart_rxtx.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/8_uart_rxtx/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="8_uart_rxtx.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+9_ADC_Continuous_Conversion.elf 9_ADC_Continuous_Conversion.map: $(OBJS) $(USER_OBJS) /home/daniel/STM32CubeIDE/9_ADC_Continuous_Conversion/STM32L476RGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "9_ADC_Continuous_Conversion.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/9_ADC_Continuous_Conversion/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="9_ADC_Continuous_Conversion.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -69,14 +69,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-8_uart_rxtx.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "8_uart_rxtx.list"
+9_ADC_Continuous_Conversion.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "9_ADC_Continuous_Conversion.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) 8_uart_rxtx.elf 8_uart_rxtx.list 8_uart_rxtx.map default.size.stdout
+	-$(RM) 9_ADC_Continuous_Conversion.elf 9_ADC_Continuous_Conversion.list 9_ADC_Continuous_Conversion.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
