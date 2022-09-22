@@ -9,7 +9,7 @@
 #include "stm32l4xx.h"
 #include "tim.h"
 
-#define TIM1EN				(1U<<11)															//Enable Timer 1 Clock Access
+#define TIM1EN				(1U<<11)																//Enable Timer 1 Clock Access
 #define CR1_CEN				(1U<<0)																//Enable counter
 
 void tim_1hz_init(void)

@@ -35,7 +35,7 @@ int main(void){
 	PA4_ADC1_INIT();
 
 	//Add delay between initialization and start of converion
-	dummytimer();
+	//dummytimer();
 
 
 
@@ -61,16 +61,16 @@ int main(void){
 		TIM1->SR &=~ SR_UIF;
 
 		//iAnalogValue = adc_read();
-		printf("Analog Value: %d\n\r", iAnalogValue);
+		//printf("Analog Value: %d\n\r", iAnalogValue);
 		GPIOA->ODR ^= LED_PIN;
-		//printf("1 Segundo passou\n");
+		printf("1 Segundo passou\n");
 
 
 
 	}
 }
 
-void dummytimer(void)
+/*void dummytimer(void)
 {
 	int count;
 
@@ -81,4 +81,4 @@ void dummytimer(void)
 
 	}
 }
-
+*/

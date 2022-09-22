@@ -1,17 +1,17 @@
-16:16:52 **** Incremental Build of configuration Debug for project 10_Timer ****
+22:27:48 **** Incremental Build of configuration Debug for project 10_Timer ****
 make -j4 all 
-arm-none-eabi-gcc "../Src/tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/tim.d" -MT"Src/tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/tim.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
 arm-none-eabi-gcc -o "10_Timer.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/10_Timer/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="10_Timer.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: 10_Timer.elf
  
 arm-none-eabi-size   10_Timer.elf 
 arm-none-eabi-objdump -h -S  10_Timer.elf  > "10_Timer.list"
    text	   data	    bss	    dec	    hex	filename
-   5876	    108	   1588	   7572	   1d94	10_Timer.elf
+   6016	    108	   1588	   7712	   1e20	10_Timer.elf
 Finished building: default.size.stdout
  
 Finished building: 10_Timer.list
  
 
-16:16:54 Build Finished. 0 errors, 0 warnings. (took 2s.306ms)
+22:27:49 Build Finished. 0 errors, 0 warnings. (took 1s.60ms)
 

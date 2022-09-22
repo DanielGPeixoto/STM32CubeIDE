@@ -20,11 +20,6 @@
 #include "adc.h"
 #include "tim.h"
 
-#define PIN_5				(1U<<5)
-#define	LED_PIN				PIN_5
-
-
-#define GPIOAEN				(1U<<0)										//shifts 1 to position 0
 
 void dummytimer(void);
 
@@ -37,23 +32,15 @@ int main(void){
 	//Add delay between initialization and start of converion
 	dummytimer();
 
-
+	start_conversion();
 
 	uart2_tx_init();
 
-	tim_1hz_init();
 
-	RCC->AHB2ENR |= GPIOAEN;
-	GPIOA->MODER |= (1U<<10);
-	GPIOA->MODER &=~ (1U<<11);
 
-	start_conversion();
 
 
 	while(1){
-
-
-
 
 		//Wait for the Update Event to happen
 		while(!(TIM1->SR & SR_UIF)){}
@@ -61,9 +48,8 @@ int main(void){
 		TIM1->SR &=~ SR_UIF;
 
 		//iAnalogValue = adc_read();
-		printf("Analog Value: %d\n\r", iAnalogValue);
-		GPIOA->ODR ^= LED_PIN;
-		//printf("1 Segundo passou\n");
+		//printf("Analog Value: %d\n\r", iAnalogValue);
+		printf("1 Segundo passou");
 
 
 

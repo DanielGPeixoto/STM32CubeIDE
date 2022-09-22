@@ -35,7 +35,7 @@ int main(void){
 	PA4_ADC1_INIT();
 
 	//Add delay between initialization and start of converion
-	dummytimer();
+	//dummytimer();
 
 
 
@@ -70,7 +70,7 @@ int main(void){
 	}
 }
 
-void dummytimer(void)
+/*void dummytimer(void)
 {
 	int count;
 
@@ -81,4 +81,4 @@ void dummytimer(void)
 
 	}
 }
-
+*/
