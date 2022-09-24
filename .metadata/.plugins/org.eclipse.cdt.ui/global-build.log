@@ -1,19 +1,20 @@
-16:15:25 **** Build of configuration Debug for project 11_SystickTimer ****
+19:58:50 **** Build of configuration Debug for project 12_PWM ****
 make -j4 all 
 arm-none-eabi-gcc "../Src/adc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/adc.d" -MT"Src/adc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/adc.o"
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/pwm.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/pwm.d" -MT"Src/pwm.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/pwm.o"
 arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
 arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
 arm-none-eabi-gcc "../Src/systick.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/systick.d" -MT"Src/systick.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/systick.o"
 arm-none-eabi-gcc "../Src/uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/uart.d" -MT"Src/uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/uart.o"
-arm-none-eabi-gcc -o "11_SystickTimer.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/11_SystickTimer/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="11_SystickTimer.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 11_SystickTimer.elf
+arm-none-eabi-gcc -o "12_PWM.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/12_PWM/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="12_PWM.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 12_PWM.elf
  
-arm-none-eabi-size   11_SystickTimer.elf 
-arm-none-eabi-objdump -h -S  11_SystickTimer.elf  > "11_SystickTimer.list"
+arm-none-eabi-size   12_PWM.elf 
+arm-none-eabi-objdump -h -S  12_PWM.elf  > "12_PWM.list"
    text	   data	    bss	    dec	    hex	filename
-   5704	    108	   1588	   7400	   1ce8	11_SystickTimer.elf
+   5704	    108	   1588	   7400	   1ce8	12_PWM.elf
 Finished building: default.size.stdout
  
-Finished building: 11_SystickTimer.list
+Finished building: 12_PWM.list
  

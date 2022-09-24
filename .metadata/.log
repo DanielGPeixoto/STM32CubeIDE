@@ -5672,3 +5672,42 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64
 
 !ENTRY org.eclipse.cdt.core 1 0 2022-09-23 15:40:28.224
 !MESSAGE Indexed '11_SystickTimer' (5 sources, 64 headers) in 5,03 sec: 3 202 declarations; 4 367 references; 4 unresolved inclusions; 30 syntax errors; 849 unresolved names (10%)
+!SESSION 2022-09-23 22:37:48.008 -----------------------------------------------
+eclipse.buildId=Version 1.10.1
+java.version=11.0.14.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-09-23 22:37:51.833
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-09-23 22:38:01.463
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-09-23 22:38:01.559
+!MESSAGE Log4j initialized with config file /home/daniel/STM32CubeIDE/.metadata/.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-09-23 22:38:14.609
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2022-09-24 16:57:08.849 -----------------------------------------------
+eclipse.buildId=Version 1.10.1
+java.version=11.0.14.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-09-24 16:57:13.275
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-09-24 16:57:22.774
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-09-24 16:57:22.878
+!MESSAGE Log4j initialized with config file /home/daniel/STM32CubeIDE/.metadata/.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-09-24 16:57:37.943
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-09-24 16:58:36.419
+!MESSAGE Indexed '12_PWM' (6 sources, 65 headers) in 10,2 sec: 3 201 declarations; 4 395 references; 4 unresolved inclusions; 30 syntax errors; 849 unresolved names (10%)

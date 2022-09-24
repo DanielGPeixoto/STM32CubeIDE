@@ -1,0 +1,2 @@
+../Src/pwm.c:16:6:initialize_GPIOE	4	static
+../Src/pwm.c:32:6:pwm	8	static
