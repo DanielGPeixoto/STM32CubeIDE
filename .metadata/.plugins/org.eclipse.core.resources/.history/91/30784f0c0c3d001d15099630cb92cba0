@@ -1,0 +1,31 @@
+/*
+ * pwm.c
+ *
+ *  Created on: 24/09/2022
+ *      Author: daniel
+ */
+
+#include "stm32l4xx.h"
+
+
+#define TIM2EN				(1U<<0)															//Enable Timer 2 Clock Access
+#define CR1_CEN				(1U<<0)																//Enable counter
+
+#define GPIOEN				(1U<<4)																//Enable clock access to GPIO
+
+
+void pwm(void)
+{
+	//initialize_GPIOE();
+
+	//Enable APB2 Clock access to Timer 1
+	RCC->APB1ENR1
+
+	//Frequency determined by TIMx_ARR
+	TIM2->ARR = 10;
+	//Duty cycle determined by TIMx_CCRx
+	TIM2->CCR1 = 50
+
+
+
+	}
