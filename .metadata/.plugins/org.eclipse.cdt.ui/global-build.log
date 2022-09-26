@@ -232,3 +232,14 @@ Finished building: default.size.stdout
  
 Finished building: 12_PWMv2.list
  
+20:50:17 **** Incremental Build of configuration Debug for project 12_PWMv2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/pwm.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -I/home/cruz/Documents/chip_headers/CMSIS/Include -I/home/cruz/Documents/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/pwm.d" -MT"Src/pwm.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/pwm.o"
+../Src/pwm.c: In function 'pwm':
+../Src/pwm.c:44:2: error: 'IM2' undeclared (first use in this function); did you mean 'TIM2'?
+   44 |  IM2->ARR  =  FreqClock/50; //4MHz/50Hz  //TIM2->ARR  =  7;
+      |  ^~~
+      |  TIM2
+../Src/pwm.c:44:2: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/subdir.mk:37: Src/pwm.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.

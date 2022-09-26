@@ -7,7 +7,7 @@ org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:0_LED_TOGGLE_ADDR\ Debug/active
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:0_LED_TOGGLE_ADDR\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:10_Timer/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:10_Timer/activeLaunchTarget=null\:---
-org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:12_PWMv2/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:12_PWMv2/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:1_LED_TOGGLE_ADDR\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:1_LED_TOGGLE_ADDR\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:2_gpio_output\ Debug/activeLaunchMode=run
