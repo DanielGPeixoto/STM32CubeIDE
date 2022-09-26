@@ -1,0 +1,78 @@
+/*
+ * pwm.c
+ *
+ *  Created on: 24/09/2022
+ *      Author: daniel
+ */
+
+#include "stm32l4xx.h"
+
+
+#define TIM2EN				(1U<<0)															//Enable Timer 2 Clock Access
+#define CR1_CEN				(1U<<0)																//Enable counter
+
+#define GPIOEN				(1U<<4)																//Enable clock access to GPIO
+#define FreqClock			4000000
+void initialize_GPIOE(){
+	//Configure PA0 as Alterative function
+	GPIOA->MODER &=~	(1U<<0); //Coloca no pino 0 o valor 1 negado ou seja 0
+	GPIOA->MODER |=		(1U<<1);
+	//Configure PA0 as push-pull
+	GPIOA->OTYPER &=~	(1u<<0);
+	//Configure PA0 as very high speed
+	GPIOA->OSPEEDR |=	(1U<<0);
+	GPIOA->OSPEEDR |=	(1U<<1);
+	//Configure AF1 low register
+	GPIOA->AFR[0]  |=	(1U<<0);
+	GPIOA->AFR[0]  &=~	(1U<<1);
+	GPIOA->AFR[0]  &=~	(1U<<2);
+	GPIOA->AFR[0]  &=~	(1U<<3);
+	//Force diconnect imput to the adc
+	GPIOA->ASCR	   &=~	(1U<<0);
+}
+void pwm(void)
+{
+	initialize_GPIOE();
+	//Configure Clock 16Mhz
+	//RCC->CFGR &=~ (1U<<10);
+
+	//Enable APB2 Clock access to Timer 2
+	RCC->APB1ENR1 |= TIM2EN;
+	//Maintain 4Mhz of clock so prescale is 1
+	TIM2->PSC	=	2-1;	//TIM2->PSC	=	9999;
+	//Frequency determined by TIMx_ARR
+	//IM2->ARR 	= 	FreqClock/50;	//4MHz/50Hz		//TIM2->ARR 	= 	7;
+	TIM2->ARR 	= 	8000;	//4MHz/50Hz		//TIM2->ARR 	= 	7;
+
+	//Timer count
+	TIM2->CNT	=	0;
+	//Duty cycle determined by TIMx_CCRx [4000;8000] [1ms;2ms]
+	TIM2->CCR1	= 	((FreqClock/50)*20)/100; 	//4000	5% of 20ms
+	//TIM2->CCR1	= 	((FreqClock/50)*10)/100;	//80000; 10% of 20ms
+
+	//PWM mode 1 - In upcounting, channel 1 is active as long as TIMx_CNT<TIMx_CCR1 else inactive
+	TIM2->CCMR1	&=~	(1U<<4);
+	TIM2->CCMR1	|=	(1U<<5);
+	TIM2->CCMR1	|=	(1U<<6);
+	TIM2->CCMR1	&=~	(1U<<16);
+
+	//DIR -> 0: Counter used as upcounter
+	TIM2->CR1	&=~ (1<<4);
+	//TIMx_ARR register is not buffered
+	TIM2->CR1	&=~	(1U<<7);
+
+	//UG-> Update generation 1: Re-initialize the counter and generates an update of the registers
+	TIM2->EGR	|= 	(1U<<0);
+
+	//CC1P: Capture/Compare 1 output Polarity. 0: OC1 active high (output mode)
+	TIM2->CCER	&=~	(1U<<1);
+	//CC1E: Capture/Compare 1 output enable. 0: Capture mode disabled
+	TIM2->CCER	|=	(1U<<0);
+
+	//CMS[1:0]: Center-aligned mode selection. 00: Edge-aligned mode
+	TIM2->CR1	&=~	(1U<<5);
+	TIM2->CR1	&=~	(1U<<6);
+	//Enable Timer 2
+	TIM2->CR1	|=	(1U<<0);
+
+}

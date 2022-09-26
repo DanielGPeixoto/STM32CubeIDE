@@ -19,6 +19,7 @@
 #include "uart.h"
 #include "adc.h"
 #include "systick.h"
+#include "pwm.h"
 
 //void dummytimer(void);
 
@@ -36,13 +37,13 @@ int main(void){
 	uart2_tx_init();
 
 
+	pwm();
 
 	while(1){
-
-		iSystickDelayMs(1000);
-		iAnalogValue = adc_read();
-		printf("Analog Value: %d\n\r", iAnalogValue);
-
+		for(int i=0; i<10000000; i++)
+			TIM2->CCR1	= 	((4000000/50)*40)/100; 	//4000	5% of 20ms
+		for(int i=0; i<1000000; i++)
+			TIM2->CCR1	= 	((4000000/50)*0)/100; 	//4000	5% of 20ms
 	}
 }
 

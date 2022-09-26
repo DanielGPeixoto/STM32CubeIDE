@@ -27,11 +27,6 @@ void initialize_GPIOE(){
 	GPIOA->AFR[0]  &=~	(1U<<1);
 	GPIOA->AFR[0]  &=~	(1U<<2);
 	GPIOA->AFR[0]  &=~	(1U<<3);
-	//Configure AF1 high register
-	GPIOA->AFR[1]  |=	(1U<<0);
-	GPIOA->AFR[1]  &=~	(1U<<1);
-	GPIOA->AFR[1]  &=~	(1U<<2);
-	GPIOA->AFR[1]  &=~	(1U<<3);
 	//Force diconnect imput to the adc
 	GPIOA->ASCR	   &=~	(1U<<0);
 }
@@ -46,12 +41,12 @@ void pwm(void)
 	//Maintain 4Mhz of clock so prescale is 1
 	TIM2->PSC	=	2-1;	//TIM2->PSC	=	9999;
 	//Frequency determined by TIMx_ARR
-	TIM2->ARR 	= 	FreqClock/50;	//4MHz/50Hz		//TIM2->ARR 	= 	7;
+	IM2->ARR 	= 	FreqClock/50;	//4MHz/50Hz		//TIM2->ARR 	= 	7;
 
 	//Timer count
 	TIM2->CNT	=	0;
 	//Duty cycle determined by TIMx_CCRx [4000;8000] [1ms;2ms]
-	TIM2->CCR1	= 	((FreqClock/50)*5)/100; 	//4000	5% of 20ms
+	TIM2->CCR1	= 	((FreqClock/50)*20)/100; 	//4000	5% of 20ms
 	//TIM2->CCR1	= 	((FreqClock/50)*10)/100;	//80000; 10% of 20ms
 
 	//PWM mode 1 - In upcounting, channel 1 is active as long as TIMx_CNT<TIMx_CCR1 else inactive
@@ -78,4 +73,5 @@ void pwm(void)
 	TIM2->CR1	&=~	(1U<<6);
 	//Enable Timer 2
 	TIM2->CR1	|=	(1U<<0);
+
 }

@@ -1,10 +1,17 @@
-15:59:38 **** Incremental Build of configuration Debug for project 12_PWMv2 ****
-make -j12 all 
+20:45:30 **** Incremental Build of configuration Debug for project 12_PWMv2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/pwm.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -I/home/cruz/Documents/chip_headers/CMSIS/Include -I/home/cruz/Documents/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/pwm.d" -MT"Src/pwm.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/pwm.o"
+arm-none-eabi-gcc -o "12_PWMv2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/cruz/gitrepo/drone/12_PWMv2/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="12_PWMv2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 12_PWMv2.elf
+ 
 arm-none-eabi-size   12_PWMv2.elf 
+arm-none-eabi-objdump -h -S  12_PWMv2.elf  > "12_PWMv2.list"
    text	   data	    bss	    dec	    hex	filename
-   5704	    108	   1588	   7400	   1ce8	12_PWMv2.elf
+   1404	      8	   1568	   2980	    ba4	12_PWMv2.elf
 Finished building: default.size.stdout
  
+Finished building: 12_PWMv2.list
+ 
 
-15:59:39 Build Finished. 0 errors, 0 warnings. (took 112ms)
+20:45:30 Build Finished. 0 errors, 0 warnings. (took 724ms)
 
