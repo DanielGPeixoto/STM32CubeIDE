@@ -1,0 +1,26 @@
+
+
+#include "stm32l476xx.h"
+#include "pwm.h"
+
+
+int main(void){
+
+	pwm();
+	while(1){
+
+
+
+
+		TIM2->CCR1	= 	((FreqClock/50)*80)/100; 	//4000	5% of 20ms
+
+
+	}
+}
+
+
+
+
+
+
+

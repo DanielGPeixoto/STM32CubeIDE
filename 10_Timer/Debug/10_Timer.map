@@ -1270,20 +1270,20 @@ LOAD /opt/st/stm32cubeide_1.10.1/plugins/com.st.stm32cube.ide.mcu.externaltools.
  .debug_line    0x0000000000001d04      0x58e ./Src/uart.o
  .debug_line    0x0000000000002292       0x84 ./Startup/startup_stm32l476rgtx.o
 
-.debug_str      0x0000000000000000    0xa3de5
+.debug_str      0x0000000000000000    0xa3de6
  .debug_str     0x0000000000000000    0x9e38b ./Src/adc.o
                                       0x9e523 (size before relaxing)
- .debug_str     0x000000000009e38b     0x40ee ./Src/main.o
-                                      0xa2595 (size before relaxing)
- .debug_str     0x00000000000a2479     0x1758 ./Src/syscalls.o
+ .debug_str     0x000000000009e38b     0x40ef ./Src/main.o
+                                      0xa2596 (size before relaxing)
+ .debug_str     0x00000000000a247a     0x1758 ./Src/syscalls.o
                                        0x8a6d (size before relaxing)
- .debug_str     0x00000000000a3bd1       0x70 ./Src/sysmem.o
+ .debug_str     0x00000000000a3bd2       0x70 ./Src/sysmem.o
                                        0x5da9 (size before relaxing)
- .debug_str     0x00000000000a3c41       0x2d ./Src/tim.o
+ .debug_str     0x00000000000a3c42       0x2d ./Src/tim.o
                                       0x9e449 (size before relaxing)
- .debug_str     0x00000000000a3c6e      0x118 ./Src/uart.o
+ .debug_str     0x00000000000a3c6f      0x118 ./Src/uart.o
                                       0x9e541 (size before relaxing)
- .debug_str     0x00000000000a3d86       0x5f ./Startup/startup_stm32l476rgtx.o
+ .debug_str     0x00000000000a3d87       0x5f ./Startup/startup_stm32l476rgtx.o
 
 .comment        0x0000000000000000       0x50
  .comment       0x0000000000000000       0x50 ./Src/adc.o

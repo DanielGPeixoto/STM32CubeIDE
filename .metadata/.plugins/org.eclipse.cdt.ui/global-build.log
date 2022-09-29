@@ -1,20 +1,232 @@
-19:58:50 **** Build of configuration Debug for project 12_PWM ****
+21:53:37 **** Incremental Build of configuration Debug for project 13_PWM2 + ADC ****
 make -j4 all 
-arm-none-eabi-gcc "../Src/adc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/adc.d" -MT"Src/adc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/adc.o"
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc "../Src/pwm.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/pwm.d" -MT"Src/pwm.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/pwm.o"
-arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
-arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
-arm-none-eabi-gcc "../Src/systick.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/systick.d" -MT"Src/systick.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/systick.o"
-arm-none-eabi-gcc "../Src/uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/uart.d" -MT"Src/uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/uart.o"
-arm-none-eabi-gcc -o "12_PWM.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/12_PWM/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="12_PWM.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 12_PWM.elf
+arm-none-eabi-gcc -o "13_PWM2 + ADC.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/13_PWM2 + ADC/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="13_PWM2 + ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 13_PWM2 + ADC.elf
  
-arm-none-eabi-size   12_PWM.elf 
-arm-none-eabi-objdump -h -S  12_PWM.elf  > "12_PWM.list"
+arm-none-eabi-size   13_PWM2\ +\ ADC.elf 
+arm-none-eabi-objdump -h -S  13_PWM2\ +\ ADC.elf  > "13_PWM2 + ADC.list"
    text	   data	    bss	    dec	    hex	filename
-   5704	    108	   1588	   7400	   1ce8	12_PWM.elf
+   6548	    116	   1596	   8260	   2044	13_PWM2 + ADC.elf
 Finished building: default.size.stdout
  
-Finished building: 12_PWM.list
+Finished building: 13_PWM2 + ADC.list
+ 
+21:53:45 **** Incremental Build of configuration Debug for project 13_PWM2 + ADC ****
+make -j4 all 
+arm-none-eabi-size   13_PWM2\ +\ ADC.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6548	    116	   1596	   8260	   2044	13_PWM2 + ADC.elf
+Finished building: default.size.stdout
+ 
+21:55:03 **** Build of configuration Debug for project 9_ADC_Continuous_Conversion ****
+make -j4 all 
+arm-none-eabi-size   9_ADC_Continuous_Conversion.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5916	    108	   1588	   7612	   1dbc	9_ADC_Continuous_Conversion.elf
+Finished building: default.size.stdout
+ 
+21:57:18 **** Incremental Build of configuration Debug for project 13_PWM2 + ADC ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "13_PWM2 + ADC.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/13_PWM2 + ADC/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="13_PWM2 + ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 13_PWM2 + ADC.elf
+ 
+arm-none-eabi-size   13_PWM2\ +\ ADC.elf 
+arm-none-eabi-objdump -h -S  13_PWM2\ +\ ADC.elf  > "13_PWM2 + ADC.list"
+   text	   data	    bss	    dec	    hex	filename
+   6548	    116	   1596	   8260	   2044	13_PWM2 + ADC.elf
+Finished building: default.size.stdout
+ 
+Finished building: 13_PWM2 + ADC.list
+ 
+22:02:49 **** Incremental Build of configuration Debug for project 13_PWM2 + ADC ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "13_PWM2 + ADC.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/13_PWM2 + ADC/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="13_PWM2 + ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 13_PWM2 + ADC.elf
+ 
+arm-none-eabi-size   13_PWM2\ +\ ADC.elf 
+arm-none-eabi-objdump -h -S  13_PWM2\ +\ ADC.elf  > "13_PWM2 + ADC.list"
+   text	   data	    bss	    dec	    hex	filename
+   6548	    116	   1596	   8260	   2044	13_PWM2 + ADC.elf
+Finished building: default.size.stdout
+ 
+Finished building: 13_PWM2 + ADC.list
+ 
+22:07:11 **** Incremental Build of configuration Debug for project 13_PWM2 + ADC ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:41:3: error: 'iDutycyle' undeclared (first use in this function); did you mean 'iDutyCycle'?
+   41 |   iDutycyle = iDutycyle + 1000;
+      |   ^~~~~~~~~
+      |   iDutyCycle
+../Src/main.c:41:3: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/subdir.mk:37: Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+22:07:31 **** Incremental Build of configuration Debug for project 13_PWM2 + ADC ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:41:16: error: 'iDutycyle' undeclared (first use in this function); did you mean 'iDutyCycle'?
+   41 |   iDutyCycle = iDutycyle + 1000;
+      |                ^~~~~~~~~
+      |                iDutyCycle
+../Src/main.c:41:16: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/subdir.mk:37: Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+22:07:49 **** Incremental Build of configuration Debug for project 13_PWM2 + ADC ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "13_PWM2 + ADC.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/13_PWM2 + ADC/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="13_PWM2 + ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 13_PWM2 + ADC.elf
+ 
+arm-none-eabi-size   13_PWM2\ +\ ADC.elf 
+arm-none-eabi-objdump -h -S  13_PWM2\ +\ ADC.elf  > "13_PWM2 + ADC.list"
+   text	   data	    bss	    dec	    hex	filename
+   6560	    116	   1596	   8272	   2050	13_PWM2 + ADC.elf
+Finished building: default.size.stdout
+ 
+Finished building: 13_PWM2 + ADC.list
+ 
+22:08:35 **** Incremental Build of configuration Debug for project 13_PWM2 + ADC ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "13_PWM2 + ADC.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/13_PWM2 + ADC/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="13_PWM2 + ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 13_PWM2 + ADC.elf
+ 
+arm-none-eabi-size   13_PWM2\ +\ ADC.elf 
+arm-none-eabi-objdump -h -S  13_PWM2\ +\ ADC.elf  > "13_PWM2 + ADC.list"
+   text	   data	    bss	    dec	    hex	filename
+   6468	    108	   1596	   8172	   1fec	13_PWM2 + ADC.elf
+Finished building: default.size.stdout
+ 
+Finished building: 13_PWM2 + ADC.list
+ 
+22:15:19 **** Incremental Build of configuration Debug for project 13_PWM2 + ADC ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "13_PWM2 + ADC.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/13_PWM2 + ADC/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="13_PWM2 + ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 13_PWM2 + ADC.elf
+ 
+arm-none-eabi-size   13_PWM2\ +\ ADC.elf 
+arm-none-eabi-objdump -h -S  13_PWM2\ +\ ADC.elf  > "13_PWM2 + ADC.list"
+   text	   data	    bss	    dec	    hex	filename
+   6472	    108	   1596	   8176	   1ff0	13_PWM2 + ADC.elf
+Finished building: default.size.stdout
+ 
+Finished building: 13_PWM2 + ADC.list
+ 
+22:15:54 **** Incremental Build of configuration Debug for project 13_PWM2 + ADC ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "13_PWM2 + ADC.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/13_PWM2 + ADC/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="13_PWM2 + ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 13_PWM2 + ADC.elf
+ 
+arm-none-eabi-size   13_PWM2\ +\ ADC.elf 
+arm-none-eabi-objdump -h -S  13_PWM2\ +\ ADC.elf  > "13_PWM2 + ADC.list"
+   text	   data	    bss	    dec	    hex	filename
+   6468	    108	   1596	   8172	   1fec	13_PWM2 + ADC.elf
+Finished building: default.size.stdout
+ 
+Finished building: 13_PWM2 + ADC.list
+ 
+22:20:35 **** Incremental Build of configuration Debug for project 13_PWM2 + ADC ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "13_PWM2 + ADC.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/13_PWM2 + ADC/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="13_PWM2 + ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 13_PWM2 + ADC.elf
+ 
+arm-none-eabi-size   13_PWM2\ +\ ADC.elf 
+arm-none-eabi-objdump -h -S  13_PWM2\ +\ ADC.elf  > "13_PWM2 + ADC.list"
+   text	   data	    bss	    dec	    hex	filename
+   6472	    108	   1596	   8176	   1ff0	13_PWM2 + ADC.elf
+Finished building: default.size.stdout
+ 
+Finished building: 13_PWM2 + ADC.list
+ 
+22:21:17 **** Incremental Build of configuration Debug for project 13_PWM2 + ADC ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "13_PWM2 + ADC.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/13_PWM2 + ADC/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="13_PWM2 + ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 13_PWM2 + ADC.elf
+ 
+arm-none-eabi-size   13_PWM2\ +\ ADC.elf 
+arm-none-eabi-objdump -h -S  13_PWM2\ +\ ADC.elf  > "13_PWM2 + ADC.list"
+   text	   data	    bss	    dec	    hex	filename
+   6468	    108	   1596	   8172	   1fec	13_PWM2 + ADC.elf
+Finished building: default.size.stdout
+ 
+Finished building: 13_PWM2 + ADC.list
+ 
+22:23:26 **** Incremental Build of configuration Debug for project 13_PWM2 + ADC ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "13_PWM2 + ADC.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/13_PWM2 + ADC/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="13_PWM2 + ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 13_PWM2 + ADC.elf
+ 
+arm-none-eabi-size   13_PWM2\ +\ ADC.elf 
+arm-none-eabi-objdump -h -S  13_PWM2\ +\ ADC.elf  > "13_PWM2 + ADC.list"
+   text	   data	    bss	    dec	    hex	filename
+   6464	    108	   1596	   8168	   1fe8	13_PWM2 + ADC.elf
+Finished building: default.size.stdout
+ 
+Finished building: 13_PWM2 + ADC.list
+ 
+22:25:04 **** Incremental Build of configuration Debug for project 13_PWM2 + ADC ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "13_PWM2 + ADC.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/13_PWM2 + ADC/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="13_PWM2 + ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 13_PWM2 + ADC.elf
+ 
+arm-none-eabi-size   13_PWM2\ +\ ADC.elf 
+arm-none-eabi-objdump -h -S  13_PWM2\ +\ ADC.elf  > "13_PWM2 + ADC.list"
+   text	   data	    bss	    dec	    hex	filename
+   6548	    116	   1596	   8260	   2044	13_PWM2 + ADC.elf
+Finished building: default.size.stdout
+ 
+Finished building: 13_PWM2 + ADC.list
+ 
+22:26:44 **** Incremental Build of configuration Debug for project 13_PWM2 + ADC ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "13_PWM2 + ADC.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/13_PWM2 + ADC/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="13_PWM2 + ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 13_PWM2 + ADC.elf
+ 
+arm-none-eabi-size   13_PWM2\ +\ ADC.elf 
+arm-none-eabi-objdump -h -S  13_PWM2\ +\ ADC.elf  > "13_PWM2 + ADC.list"
+   text	   data	    bss	    dec	    hex	filename
+   6548	    116	   1596	   8260	   2044	13_PWM2 + ADC.elf
+Finished building: default.size.stdout
+ 
+Finished building: 13_PWM2 + ADC.list
+ 
+22:28:13 **** Incremental Build of configuration Debug for project 13_PWM2 + ADC ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "13_PWM2 + ADC.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/13_PWM2 + ADC/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="13_PWM2 + ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 13_PWM2 + ADC.elf
+ 
+arm-none-eabi-size   13_PWM2\ +\ ADC.elf 
+arm-none-eabi-objdump -h -S  13_PWM2\ +\ ADC.elf  > "13_PWM2 + ADC.list"
+   text	   data	    bss	    dec	    hex	filename
+   6468	    108	   1596	   8172	   1fec	13_PWM2 + ADC.elf
+Finished building: default.size.stdout
+ 
+Finished building: 13_PWM2 + ADC.list
+ 
+22:29:01 **** Incremental Build of configuration Debug for project 13_PWM2 + ADC ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "13_PWM2 + ADC.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/13_PWM2 + ADC/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="13_PWM2 + ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 13_PWM2 + ADC.elf
+ 
+arm-none-eabi-size   13_PWM2\ +\ ADC.elf 
+arm-none-eabi-objdump -h -S  13_PWM2\ +\ ADC.elf  > "13_PWM2 + ADC.list"
+   text	   data	    bss	    dec	    hex	filename
+   6468	    108	   1596	   8172	   1fec	13_PWM2 + ADC.elf
+Finished building: default.size.stdout
+ 
+Finished building: 13_PWM2 + ADC.list
  

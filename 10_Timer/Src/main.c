@@ -20,7 +20,7 @@
 #include "adc.h"
 #include "tim.h"
 
-#define PIN_5				(1U<<5)
+#define PIN_5				(1U<<11)
 #define	LED_PIN				PIN_5
 
 
@@ -44,8 +44,8 @@ int main(void){
 	tim_1hz_init();
 
 	RCC->AHB2ENR |= GPIOAEN;
-	GPIOA->MODER |= (1U<<10);
-	GPIOA->MODER &=~ (1U<<11);
+	GPIOA->MODER |= (1U<<22);
+	GPIOA->MODER &=~ (1U<<23);
 
 	start_conversion();
 

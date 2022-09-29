@@ -1,0 +1,101 @@
+/*
+ * pwm.c
+ *
+ *  Created on: 24/09/2022
+ *      Author: daniel
+ */
+
+#include "stm32l476xx.h"
+
+
+#define TIM2EN				(1U<<0)																//Enable Timer 2 Clock Access
+#define CR1_CEN				(1U<<0)																//Enable counter
+
+#define GPIOAEN				(1U<<0)
+
+void initialize_GPIOA(void){
+
+
+
+	/*Enable clock access to Port A*/
+	RCC->AHB2ENR |= GPIOAEN;
+	/*Set PA0 Mode as alternate function mode*/
+	GPIOA->MODER |= (1U<<1);
+	GPIOA->MODER &=~ (1U<<0);
+	/*Output Push-Pull */
+	GPIOA->OTYPER &=~(1U<<0);
+	/*Set I/O Output speed - High Speed*/
+	GPIOA->OSPEEDR |=(1U<<0);
+	GPIOA->OSPEEDR |=(1U<<1);
+	/*Port Pull-down*/
+	GPIOA->PUPDR &=~(1U<<0);
+	GPIOA->PUPDR |=(1U<<1);
+	/*Set the alternate function AF1 to PA0*/
+	GPIOA->AFR[0] |=(1U<<0);
+	GPIOA->AFR[0] &=~(1U<<1);
+	GPIOA->AFR[0] &=~(1U<<2);
+	GPIOA->AFR[0] &=~(1U<<3);
+	/*Disconnect analog switch to the ADC input*/
+	GPIOA->ASCR &=~(1U<<0);
+
+
+
+
+
+
+}
+
+void pwm(void)
+{
+	initialize_GPIOA();
+
+	/*****************************************************************/
+
+	//Enable APB2 Clock access to Timer 2
+	RCC->APB1ENR1 |= TIM2EN;
+	//Output compare mode enable Timer 2 Ch1
+	TIM2->CCMR1 |= (1U<<3);
+	//Auto-Reload pre-load Enable
+	TIM2->CR1	|= (1U<<7);
+	//Select the channel 1 from the Timer 2 as Output for PWM
+	TIM2->CCMR1	&=~ (1U<<0);
+	TIM2->CCMR1	&=~ (1U<<1);
+	//Output enable for channel 1 of timer 2
+	TIM2->CCER	|=	(1U<<0);
+
+
+	/*****************************************************************/
+
+	//Enable this register bit so that the no register values are not updated <<<<<<-----------------Doubt over here. Is this 1 or 0 ?
+	TIM2->CR1	|= (1U<<1);
+
+
+	//Timer Pre-scaler Value
+	TIM2->PSC = 16;
+	//Timer Auto-Reload Value -> This dictates the frequency of the signal
+	TIM2->ARR = 10000;
+	//Timer Output Compare register -> This will dictate the Duty-Cylce of the signal
+	TIM2->CCR1 = 1000;
+
+
+	//Disable this register bit so that the register values from above can move to pre-load registers
+	TIM2->CR1	&=~ (1U<<1);
+	//Enable the update generation in order to update the shadow registers with pre-load registers new values
+	TIM2->EGR |= (1U<<0);
+	//Clear the UIF flag that is set when UG bit is set in EGR to update the content of the register
+	TIM2->SR &=~ (1U<<0);																		//<<<<<<-----------------Doubt over here. Is this 1 or 0 ?
+
+	/*****************************************************************/
+
+	//Setting Output mode for the PWM - PMW MODE 2
+	TIM2->CCMR1 |=(1U<<4);
+	TIM2->CCMR1 |= (1U<<5);
+	TIM2->CCMR1 |= (1U<<6);
+	TIM2->CCMR1 &=~(1U<<16);
+	//Setting Output signal polarity - Active High
+	TIM2->CCER &=~(1U<<1);
+	//Enable the counter
+	TIM2->CR1 |= (1U<<0);
+
+
+	}

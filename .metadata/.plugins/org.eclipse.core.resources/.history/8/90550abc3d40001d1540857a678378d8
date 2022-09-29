@@ -1,0 +1,58 @@
+
+#include "stm32l4xx.h"
+#include <stdint.h>
+#include <stdio.h>
+#include "uart.h"
+#include "adc.h"
+#include "systick.h"
+#include "pwm.h"
+
+#define dFreqClock 4000000
+
+void dummytimer(void);
+
+int iAnalogValue;
+int iDutyCycleMin = 1;	//((dFreqClock/100)*10)/100;
+int iDutyCycleMax = 40000;	//((dFreqClock/100)*100)/100;
+
+
+
+int iDutyCycle = 0;
+
+int convert(int iAdcRead){
+	int iInputMin = 1, iInputMax = 4096;
+	return (iAdcRead - iInputMin)*(iDutyCycleMax - iDutyCycleMin)/(iInputMax - iInputMin) + iDutyCycleMax;
+}
+int main(void){
+	PA4_ADC1_INIT();
+	//Add delay between initialization and start of converion
+	dummytimer();
+	start_conversion();
+	//tim_1hz_init();
+	uart2_tx_init();
+	pwm();
+
+	while(1){
+
+
+		iAnalogValue = adc_read();
+
+		//iDutyCycle = convert(iAnalogValue);
+		iDutyCycle = iDutyCycle + 1;
+		printf("Analog Value, Value converted: %d %d \n\r", iAnalogValue, iDutyCycle);
+		TIM2->CCR1	= 	iDutyCycle; 	//4000	5% of 20ms
+
+
+
+	}
+}
+
+void dummytimer(void)
+{
+	int count;
+	for(int i=0; i < 8000; i++)
+	{
+		count ++;
+	}
+}
+

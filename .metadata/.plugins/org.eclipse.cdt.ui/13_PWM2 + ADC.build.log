@@ -1,0 +1,17 @@
+22:29:01 **** Incremental Build of configuration Debug for project 13_PWM2 + ADC ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "13_PWM2 + ADC.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/13_PWM2 + ADC/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="13_PWM2 + ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 13_PWM2 + ADC.elf
+ 
+arm-none-eabi-size   13_PWM2\ +\ ADC.elf 
+arm-none-eabi-objdump -h -S  13_PWM2\ +\ ADC.elf  > "13_PWM2 + ADC.list"
+   text	   data	    bss	    dec	    hex	filename
+   6468	    108	   1596	   8172	   1fec	13_PWM2 + ADC.elf
+Finished building: default.size.stdout
+ 
+Finished building: 13_PWM2 + ADC.list
+ 
+
+22:29:02 Build Finished. 0 errors, 0 warnings. (took 1s.187ms)
+

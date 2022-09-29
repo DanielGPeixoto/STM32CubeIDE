@@ -1,0 +1,59 @@
+/*UART Transmitter Driver using USART2 Peripheral*/
+
+	/***********************Configure UART pin***************************/
+	/*	Enable clock access to GPIOA for PA2 as TX line					*/
+	/*	Set PA2 Mode as alternate function mode							*/
+	/*	Set the alternate function typed to UART						*/
+	/********************************************************************/
+
+	/********************Configure the UART module***********************/
+	/*	Enable clock access to UART2									*/
+	/*	Configure baudrate												*/
+	/*	Configure transfer direction									*/
+	/*	Enable UART module												*/
+	/********************************************************************/
+
+#include "stm32l4xx.h"
+//#include <stdint.h>
+//#include <stdio.h>
+//#include "uart.h"
+//#include "adc.h"
+#include "systick.h"
+//#include "pwm.h"
+
+#define PIN_5			(1U<11)
+#define	LED_PIN			PIN_5
+
+
+
+int main(void){
+
+	/*
+	//Enable clock accesses to GPIOA
+	RCC_AHB2EN_R |= GPIOAEN;
+	GPIOA_MODE_R |= (1U<<10);
+	GPIOA_MODE_R &=~ (1U<<11);											//set's only 11th bit to 0
+	 */
+
+	RCC->AHB2ENR |= GPIOAEN;
+	GPIOA->MODER |= (1U<<22);
+	GPIOA->MODER &=~ (1U<<23);
+
+	//Enabling clock accesses to GIPOA using structures method
+
+
+	while(1){
+
+
+		iSystickDelayMs(1000);
+		//GPIOA_OD_R ^= LED_PIN;											//^= toggle operator
+		GPIOA->ODR ^= LED_PIN;
+	}
+}
+
+
+
+
+
+
+

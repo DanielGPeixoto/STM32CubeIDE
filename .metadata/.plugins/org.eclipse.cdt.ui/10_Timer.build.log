@@ -1,4 +1,4 @@
-23:50:24 **** Build of configuration Debug for project 10_Timer ****
+15:07:43 **** Incremental Build of configuration Debug for project 10_Timer ****
 make -j4 all 
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Include -I/home/daniel/Documents/STM32BareaMetalCourse/chip_headers/CMSIS/Device/ST/STM32L4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
 arm-none-eabi-gcc -o "10_Timer.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/daniel/STM32CubeIDE/10_Timer/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="10_Timer.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -13,5 +13,5 @@ Finished building: default.size.stdout
 Finished building: 10_Timer.list
  
 
-23:50:26 Build Finished. 0 errors, 0 warnings. (took 2s.89ms)
+15:07:44 Build Finished. 0 errors, 0 warnings. (took 1s.445ms)
 

@@ -41,9 +41,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  18 .debug_line   0000051d  00000000  00000000  0002cc22  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    0009e2bc  00000000  00000000  0002d13f  2**0
+ 19 .debug_str    0009e2bd  00000000  00000000  0002d13f  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000050  00000000  00000000  000cb3fb  2**0
+ 20 .comment      00000050  00000000  00000000  000cb3fc  2**0
                   CONTENTS, READONLY
  21 .debug_frame  00000058  00000000  00000000  000cb44c  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -99,17 +99,17 @@ int main(void){
  80001d2:	4a14      	ldr	r2, [pc, #80]	; (8000224 <main+0x5c>)
  80001d4:	f043 0301 	orr.w	r3, r3, #1
  80001d8:	64d3      	str	r3, [r2, #76]	; 0x4c
-	GPIOA->MODER |= (1U<<10);
+	GPIOA->MODER |= (1U<<22);
  80001da:	f04f 4390 	mov.w	r3, #1207959552	; 0x48000000
  80001de:	681b      	ldr	r3, [r3, #0]
  80001e0:	f04f 4290 	mov.w	r2, #1207959552	; 0x48000000
- 80001e4:	f443 6380 	orr.w	r3, r3, #1024	; 0x400
+ 80001e4:	f443 0380 	orr.w	r3, r3, #4194304	; 0x400000
  80001e8:	6013      	str	r3, [r2, #0]
-	GPIOA->MODER &=~ (1U<<11);
+	GPIOA->MODER &=~ (1U<<23);
  80001ea:	f04f 4390 	mov.w	r3, #1207959552	; 0x48000000
  80001ee:	681b      	ldr	r3, [r3, #0]
  80001f0:	f04f 4290 	mov.w	r2, #1207959552	; 0x48000000
- 80001f4:	f423 6300 	bic.w	r3, r3, #2048	; 0x800
+ 80001f4:	f423 0300 	bic.w	r3, r3, #8388608	; 0x800000
  80001f8:	6013      	str	r3, [r2, #0]
 	//Enabling clock accesses to GIPOA using structures method
 
@@ -132,7 +132,7 @@ int main(void){
  8000210:	f04f 4390 	mov.w	r3, #1207959552	; 0x48000000
  8000214:	695b      	ldr	r3, [r3, #20]
  8000216:	f04f 4290 	mov.w	r2, #1207959552	; 0x48000000
- 800021a:	f083 0320 	eor.w	r3, r3, #32
+ 800021a:	f483 6300 	eor.w	r3, r3, #2048	; 0x800
  800021e:	6153      	str	r3, [r2, #20]
 		for(int i = 0; i<20000; i++){}
  8000220:	e7eb      	b.n	80001fa <main+0x32>

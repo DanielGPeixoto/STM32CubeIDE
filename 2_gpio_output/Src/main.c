@@ -5,7 +5,7 @@
 
 
 
-#define PIN_5				(1U<<5)
+#define PIN_5				(1U<<11)
 #define	LED_PIN				PIN_5
 
 
@@ -20,8 +20,8 @@ int main(void){
 	GPIOA_MODE_R &=~ (1U<<11);											//set's only 11th bit to 0
 	 */
 	RCC->AHB2ENR |= GPIOAEN;
-	GPIOA->MODER |= (1U<<10);
-	GPIOA->MODER &=~ (1U<<11);
+	GPIOA->MODER |= (1U<<22);
+	GPIOA->MODER &=~ (1U<<23);
 
 	//Enabling clock accesses to GIPOA using structures method
 
