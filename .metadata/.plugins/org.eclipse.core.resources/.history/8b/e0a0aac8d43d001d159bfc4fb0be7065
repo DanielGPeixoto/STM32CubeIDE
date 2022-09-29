@@ -41,8 +41,7 @@ void pwm(void)
 	//Maintain 4Mhz of clock so prescale is 1
 	TIM2->PSC	=	2-1;	//TIM2->PSC	=	9999;
 	//Frequency determined by TIMx_ARR
-	//IM2->ARR 	= 	FreqClock/50;	//4MHz/50Hz		//TIM2->ARR 	= 	7;
-	TIM2->ARR 	= 	40000;	//4MHz/50Hz		//TIM2->ARR 	= 	7;
+	IM2->ARR 	= 	FreqClock/50;	//4MHz/50Hz		//TIM2->ARR 	= 	7;
 
 	//Timer count
 	TIM2->CNT	=	0;

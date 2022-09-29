@@ -29,7 +29,6 @@ int iAnalogValue;
 int iDutyCycleMin = ((dFreqClock/50)*5)/100;
 int iDutyCycleMax = ((dFreqClock/50)*10)/100;
 float fDutyCycle = 0.0;
-
 int convert(int iAdcRead){
 	iInputMin = 1, iInputMax = 4096;
 	return (iAdcRead - iInputMin)*(iDutyCycleMax - iDutyCycleMin)/(iInputMax - iInputMin) + iDutyCycleMax;

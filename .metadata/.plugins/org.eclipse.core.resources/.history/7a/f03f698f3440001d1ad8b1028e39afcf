@@ -25,6 +25,10 @@ void PA4_ADC1_INIT(void)
 	//Connect GPIO Analog switch to ADC input
 	GPIOA->ASCR	|=	ASCR_ASC4;
 
+
+
+
+
 	/***Configure ADC Module***/
 	//Enable clock access to ADC Module
 	RCC->AHB2ENR |=	ADCEN;
@@ -47,14 +51,19 @@ void PA4_ADC1_INIT(void)
 	ADC1->CR	|=	(1U<<31);
 	//Enable ADC
 	ADC1->CR	|=	(1U<<0);
-}
 
-void start_conversion(void){
+
+	}
+
+void start_conversion(void)
+{
 	//Start regular conversion
 	ADC1->CR	|=	(1U<<2);
-}
 
-uint32_t adc_read(void){
+	}
+
+uint32_t adc_read(void)
+{
 	//Wait for end-of-conversion flag by reading the EOC flag. Using the AND operation against the bit we want
 	//to read, this operation will return 1 in case of bit number 2 in the ADC1->CR is set to 1 and will return zero if not.
 	//So, while the operation does not return 1, we wait

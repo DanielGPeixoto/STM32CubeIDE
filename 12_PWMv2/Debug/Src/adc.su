@@ -1,3 +1,0 @@
-../Src/adc.c:17:6:PA4_ADC1_INIT	4	static
-../Src/adc.c:58:6:start_conversion	4	static
-../Src/adc.c:65:10:adc_read	4	static

@@ -21,33 +21,25 @@
 #include "systick.h"
 #include "pwm.h"
 
-#define dFreqClock 4000000
-
 //void dummytimer(void);
 
 int iAnalogValue;
-int iDutyCycleMin = ((dFreqClock/50)*5)/100;
-int iDutyCycleMax = ((dFreqClock/50)*10)/100;
-float fDutyCycle = 0.0;
 
-int convert(int iAdcRead){
-	iInputMin = 1, iInputMax = 4096;
-	return (iAdcRead - iInputMin)*(iDutyCycleMax - iDutyCycleMin)/(iInputMax - iInputMin) + iDutyCycleMax;
-}
 int main(void){
 	PA4_ADC1_INIT();
-	//Add delay between initialization and start of converion
 	dummytimer();
+	while(1){
+	//Add delay between initialization and start of converion
+
 	start_conversion();
-	//tim_1hz_init();
-	//uart2_tx_init();
+	uart2_tx_init();
 	pwm();
 
-	while(1){
-		iAnalogValue = adc_read();
-		fDutyCycle = convert(iAnalogValue);
-		printf("Analog Value, Value converted: %d\n\r", iAnalogValue, fDutyCycle);
-		TIM2->CCR1	= 	fDutyCycle; 	//4000	5% of 20ms
+
+		for(int i=0; i<10000000; i++)
+			TIM2->CCR1	= 	((4000000/50)*40)/100; 	//4000	5% of 20ms
+		for(int i=0; i<1000000; i++)
+			TIM2->CCR1	= 	((4000000/50)*0)/100; 	//4000	5% of 20ms
 	}
 }
 
@@ -58,6 +50,8 @@ int main(void){
 	for(int i=0; i < 8000; i++)
 	{
 		count ++;
+
+
 	}
 }
 */
