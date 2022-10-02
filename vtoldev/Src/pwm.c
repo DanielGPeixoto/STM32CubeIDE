@@ -16,28 +16,28 @@
 #define dFreq50Hz			50
 
 
-void initialize_GPIOE_PA0(){
-	//Configure PA0 as Alterative function
-	GPIOA->MODER &=~	(1U<<0); //Coloca no pino 0 o valor 1 negado ou seja 0
-	GPIOA->MODER |=		(1U<<1);
-	//Configure PA0 as push-pull
-	GPIOA->OTYPER &=~	(1u<<0);
-	//Configure PA0 as very high speed
-	GPIOA->OSPEEDR |=	(1U<<0);
-	GPIOA->OSPEEDR |=	(1U<<1);
-	//Configure AF1 low register
-	GPIOA->AFR[0]  |=	(1U<<0);
-	GPIOA->AFR[0]  &=~	(1U<<1);
-	GPIOA->AFR[0]  &=~	(1U<<2);
-	GPIOA->AFR[0]  &=~	(1U<<3);
+void initialize_GPIOE_PA5(){
+	//Configure PA5 as Alterative function
+	GPIOA->MODER &=~	(1U<<10); //Coloca no pino 0 o valor 1 negado ou seja 0
+	GPIOA->MODER |=		(1U<<11);
+	//Configure PA5 as push-pull
+	GPIOA->OTYPER &=~	(1u<<5);
+	//Configure PA5 as very high speed
+	GPIOA->OSPEEDR |=	(1U<<10);
+	GPIOA->OSPEEDR |=	(1U<<11);
+	//Configure AF1 low register, this register is connect with timer
+	GPIOA->AFR[0]  |=	(1U<<20);
+	GPIOA->AFR[0]  &=~	(1U<<21);
+	GPIOA->AFR[0]  &=~	(1U<<22);
+	GPIOA->AFR[0]  &=~	(1U<<23);
 	//Force diconnect imput to the adc
-	GPIOA->ASCR	   &=~	(1U<<0);
+	GPIOA->ASCR	   &=~	(1U<<5);
 }
 void pwm(void)
 {
 	long FreqClock = dFreqClock * 1000000;
 
-	initialize_GPIOE_PA0();
+	initialize_GPIOE_PA5();
 	//Configure Clock 16Mhz
 	//RCC->CFGR &=~ (1U<<10);
 

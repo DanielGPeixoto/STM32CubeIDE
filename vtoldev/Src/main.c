@@ -56,7 +56,6 @@ int main(void){
 	uart2_tx_init();
 	pwm();
 	while(1){
-		init();
 		iAnalogValue = adc_read();
 		iDutyCycle = convert(iAnalogValue);
 		//printf("iAnalogValue: %d; iDutyCycle %d; iDutyCycleMax: %d; iDutyCycleMin %d; \n\r",iAnalogValue, iDutyCycle, iDutyCycleMax,iDutyCycleMin);

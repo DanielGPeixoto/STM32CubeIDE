@@ -8,7 +8,7 @@
 /*---------------------------------*/
 #define GPIOAEN             (1U<<0)     //shifts 1 to position 0
 
-void initialize_GPIOE_PA5(void){
+void initialize_GPIOE_PA1(void){
 	/*LED 1 Hz PA1*/
 	    //RCC->AHB2ENR |= GPIOAEN;
 	    GPIOA->MODER |= (1U<<3);
@@ -17,7 +17,7 @@ void initialize_GPIOE_PA5(void){
 	/*---------------------*/
 }
 void ledfreq1hz(void){
-		initialize_GPIOE_PA5();
+		initialize_GPIOE_PA1();
 	    //Enable APB2 Clock access to Timer 1
 	    RCC->APB1ENR1 |= TIM5EN;
 	    //Load the Timer 1 Pre-scaler with 400
