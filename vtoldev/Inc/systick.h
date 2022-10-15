@@ -1,8 +1,6 @@
 /*
- * systick.h
- *
- *  Created on: 23/09/2022
- *      Author: daniel
+ *  Created on: 21/09/2022
+ *      Author: Daniel e Paulo
  */
 
 #ifndef SYSTICK_H_

@@ -1,19 +1,17 @@
 /*
- * pwm.c
- *
- *  Created on: 24/09/2022
- *      Author: daniel
+ *  Created on: 21/09/2022
+ *      Author: Daniel e Paulo
  */
 
 #include "stm32l4xx.h"
 
 
-#define TIM2EN				(1U<<0)															//Enable Timer 2 Clock Access
-#define CR1_CEN				(1U<<0)																//Enable counter
+#define TIM2EN				(1U<<0)			//Enable Timer 2 Clock Access
+#define CR1_CEN				(1U<<0)			//Enable counter
+#define ddFreqClock			8.0				//2
+#define dFreq50Hz			50.0
+#define dPercDutyCycle		5.0
 
-#define GPIOEN				(1U<<4)																//Enable clock access to GPIO
-#define dFreqClock			2
-#define dFreq50Hz			50
 
 
 void initialize_GPIOE_PA5(){
@@ -35,7 +33,7 @@ void initialize_GPIOE_PA5(){
 }
 void pwm(void)
 {
-	long FreqClock = dFreqClock * 1000000;
+	long dFreqClock = ddFreqClock * 1000000;
 
 	initialize_GPIOE_PA5();
 	//Configure Clock 16Mhz
@@ -44,16 +42,15 @@ void pwm(void)
 	//Enable APB2 Clock access to Timer 2
 	RCC->APB1ENR1 |= TIM2EN;
 	//Maintain 4Mhz of clock so prescale is 1
-	TIM2->PSC	=	2-1;	//TIM2->PSC	=	9999;
+	TIM2->PSC	=	2-1;
 	//Frequency determined by TIMx_ARR
-	TIM2->ARR 	= 	FreqClock/dFreq50Hz;	//4MHz/50Hz		//TIM2->ARR 	= 	7;
-	//TIM2->ARR 	= 	40000;	//4MHz/50Hz		//TIM2->ARR 	= 	7;
-
+	TIM2->ARR 	= 	(dFreqClock/dFreq50Hz);	//4MHz/50Hz		//TIM2->ARR 	= 	7;
+	//TIM2->ARR 	= 	(80000000/50);
 	//Timer count
 	TIM2->CNT	=	0;
 	//Duty cycle determined by TIMx_CCRx [4000;8000] [1ms;2ms]
-	TIM2->CCR1	= 	((FreqClock/50)*20)/100; 	//4000	5% of 20ms
-	//TIM2->CCR1	= 	((FreqClock/50)*10)/100;	//80000; 10% of 20ms
+	TIM2->CCR1	= 	(dPercDutyCycle/100)*(dFreqClock/dFreq50Hz); 	//4000	5% of 20ms
+	//TIM2->CCR1	= 	((dFreqClock/50)*10)/100;	//80000; 10% of 20ms
 
 	//PWM mode 1 - In upcounting, channel 1 is active as long as TIMx_CNT<TIMx_CCR1 else inactive
 	TIM2->CCMR1	&=~	(1U<<4);

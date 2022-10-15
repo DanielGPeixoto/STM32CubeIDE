@@ -1,3 +1,7 @@
+/*
+ *  Created on: 21/09/2022
+ *      Author: Daniel e Paulo
+ */
 #include "stm32l4xx.h"
 #include "ledfreq1hz.h"
 
@@ -6,7 +10,7 @@
 /*LED 1HZ*/
 #define AF2_TIM             (1U<<5)
 /*---------------------------------*/
-#define GPIOAEN             (1U<<0)     //shifts 1 to position 0
+#define GPIOAEN             (1U<<0)
 
 void initialize_GPIOE_PA1(void){
 	/*LED 1 Hz PA1*/
@@ -21,7 +25,7 @@ void ledfreq1hz(void){
 	    //Enable APB2 Clock access to Timer 1
 	    RCC->APB1ENR1 |= TIM5EN;
 	    //Load the Timer 1 Pre-scaler with 400
-	    TIM5->PSC = 400-1;
+	    TIM5->PSC = 800-1;
 	    //Load the Auto Reload with 10000
 	    TIM5->ARR = 10000-1;
 	    /*Set CH 2 Output Compare Toggle Mode*/
@@ -33,6 +37,8 @@ void ledfreq1hz(void){
 	    TIM5->CCER |= (1U<<4);
 	    //Counter register starts with 0
 	    TIM5->CNT = 0;
+	    //Enable interrupt
+	    TIM5->DIER  |= (1U<<0);
 	    //Enable Timer 2
 	    TIM5 ->CR1 = (1U<<0);
 }

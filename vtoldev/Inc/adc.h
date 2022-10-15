@@ -1,8 +1,6 @@
 /*
- * adc.h
- *
  *  Created on: 21/09/2022
- *      Author: daniel
+ *      Author: Daniel e Paulo
  */
 
 #ifndef ADC_H_

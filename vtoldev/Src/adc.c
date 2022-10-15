@@ -1,8 +1,6 @@
 /*
- * adc.c
- *
  *  Created on: 21/09/2022
- *      Author: daniel
+ *      Author: Daniel e Paulo
  */
 #include "stm32l4xx.h"
 #include "adc.h"
@@ -28,7 +26,7 @@ void PA4_ADC1_INIT(void)
 	/***Configure ADC Module***/
 	//Enable clock access to ADC Module
 	RCC->AHB2ENR |=	ADCEN;
-	//Set ADC common clock
+	//Set ADC common clock synchronous clock mode (HCLK / 2)
 	ADC123_COMMON->CCR	&=~ (1U<<16);
 	ADC123_COMMON->CCR	|=  (1U<<17);
 	//Set continuous conversion

@@ -1,8 +1,6 @@
 /*
- * ledfreq1hz.h
- *
- *  Created on: 01/10/2022
- *      Author: cruz
+ *  Created on: 21/09/2022
+ *      Author: Daniel e Paulo
  */
 
 #ifndef LEDFREQ1HZ_H_

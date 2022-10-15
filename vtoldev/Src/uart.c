@@ -1,8 +1,6 @@
 /*
- * uart.c
- *
- *  Created on: 17/08/2022
- *      Author: daniel
+ *  Created on: 21/09/2022
+ *      Author: Daniel e Paulo
  */
 
 #include "stm32l4xx.h"
