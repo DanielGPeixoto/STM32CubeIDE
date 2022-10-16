@@ -9,7 +9,7 @@
 
 #define USART2EN			(1U<<17)															//Enable USART2 Clock - shifts 1 to position 17
 #define GPIOAEN				(1U<<0)																//Enable GPIOA Clock
-#define SYS_FREQ			4000000																//System clock frequency - Default frequency is 4MHz
+#define SYS_FREQ			80000000																//System clock frequency - Default frequency is 4MHz
 #define APB1_CLK			SYS_FREQ															//Peripheral clock 1 equals the system clock
 
 

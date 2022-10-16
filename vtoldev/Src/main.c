@@ -13,37 +13,49 @@
 #include "systemclock.h"
 
 /****************	Constats defines **********************/
-#define dFreqClock 8.0	//Define frequency on MHz 2 by defoult
+#define dFreqClock 80.0	//Define frequency on MHz 2 by defoult
 #define dFreq50Hz  50.0	//Define frequency on Hz
-#define dPercMotorMin	1.0	//Define percentage minimum at 5%
-#define dPercMotorMax	100.0	// Define percentage maximum at 10%
+#define dPercMotorMin	5.0	//Define percentage minimum at 5%
+#define dPercMotorMax	10.0	// Define percentage maximum at 10%
 #define dDutyCycle		TIM2->CCR1
 //#define lFreqClock 	2000000
 /***************************************************/
 void init(void);
-long lFreqClock = 0.0;
-long lFreq50Hz = 0.0;
+unsigned long lFreqClock = 0.0;
+unsigned long lFreq50Hz = 0.0;
 
 int iAnalogValue;
-int lValueDutyCycleMin = 0.0;	//Value for CCR1
-int lValueDutyCycleMax = 0.0;	//Value for CCR1
-long lValueDutyCycle = 0.0;
+unsigned long lValueDutyCycleMin = 1.0;	//Value for CCR1
+unsigned long lValueDutyCycleMax = 1.0;	//Value for CCR1
+unsigned long lValueDutyCycle = 0.0;
 int iContTime = 0;
 
 //apagar
 double x = 0.0, z = 0.0, y = 0.0, k = 0.0;
 unsigned long convert(int iAdcRead){
-	int iInputMin = 1.0, iInputMax = 4096.0;
-	z = (iAdcRead - iInputMin);
-	x = (lValueDutyCycleMax - lValueDutyCycleMin);
-	y = (iInputMax - iInputMin);
-	k = (z*x);
+	int iInputMin = 0.0, iInputMax = 4096.0;
+	//z = (iAdcRead - iInputMin);
+	//x = (lValueDutyCycleMax - lValueDutyCycleMin);
+	//y = (iInputMax - iInputMin);
+	//k = (z*x);
 	//printf("iAdcRead %d; iInputMax %d; iInputMin %d; lValueDutyCycleMax: %d; lValueDutyCycleMin %d; \n\r", iAdcRead, iInputMax, iInputMin, lValueDutyCycleMax,lValueDutyCycleMin);
 	return (((iAdcRead - iInputMin)*((lValueDutyCycleMax - lValueDutyCycleMin)/(iInputMax - iInputMin))) + lValueDutyCycleMin);
 }
+/*
+int main(){
+	RCC->AHB2ENR |= (1U<<0);
+	GPIOA->MODER |= (1U<<2);
+	GPIOA->MODER &=~ (1U<<3);
+	systemclock();
+	while(1){
+		GPIOA->ODR ^= (1U<<1);
+	}
+	return 1;
+}*/
 
 int main(void){
 	systemclock();
+	//iSystickDelayMs(1);
 	init();
 	ledfreq1hz();
 	iContTime = 0;
@@ -59,7 +71,9 @@ int main(void){
 	ledfreq1hz();
 	start_conversion();
 	uart2_tx_init();
-	pwm();
+	pwmb();
+	pwmr();
+	pwml();
 	//Add delay for do motor start
 	TIM5->SR &=~ (1U<<0);
 	iContTime = 0;
@@ -74,9 +88,9 @@ int main(void){
 
 	while(1){
 		iAnalogValue = adc_read();
-		iAnalogValue = 2048;
+		//iAnalogValue = 2048;
 		lValueDutyCycle = convert(iAnalogValue);
-		//printf("iAnalogValue: %d; lValueDutyCycle %d; lValueDutyCycleMax: %d; lValueDutyCycleMin %d; \n\r",iAnalogValue, lValueDutyCycle, lValueDutyCycleMax,lValueDutyCycleMin);
+		printf("iAnalogValue: %d; lValueDutyCycle: %ld; lValueDutyCycleMin: %ld: lValueDutyCycleMax: %ld.\n",iAnalogValue, lValueDutyCycle, lValueDutyCycleMin, lValueDutyCycleMax);
 		//printf("lValueDutyCycle %d, lFreq50Hz %ld, iPercDuty %f, \n\r", lValueDutyCycle, lFreq50Hz, iPercDuty);
 		dDutyCycle	= 	lValueDutyCycle; 	//4000	5% of 20ms
 	}

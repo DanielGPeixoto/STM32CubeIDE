@@ -8,7 +8,9 @@
 
 
 void initialize_GPIOE_PA0(void);
-void pwm(void);
+void pwmb(void);
+void pwmr(void);
+void pwml(void);
 
 
 

@@ -30,6 +30,11 @@ void systemclock(){
 	//Wait until PLLRDY is cleared
 	//while((RCC->CR 	&	(1U<<25)));
 
+	//PLLSRC: Main PLL, PLLSAI1 and PLLSAI2 entry clock source
+	//10: HSI16 clock selected as PLL, PLLSAI1 and PLLSAI2 clock entry
+	RCC->PLLCFGR &= (1U<<0);
+	RCC->PLLCFGR |= (1U<<1);
+
 	//PLLM: Division factor for the main PLL and audio PLL = 1
 	//VCO input frequency = PLL input clock frequency / PLLM
 	RCC->PLLCFGR	&=~	(1U<<4);
@@ -45,6 +50,15 @@ void systemclock(){
 	RCC->PLLCFGR	&=~	(1U<<12);
 	RCC->PLLCFGR	&=~	(1U<<13);
 	RCC->PLLCFGR	&=~	(1U<<14);
+
+	//PLLP: Main PLL division factor for PLLSAI3CLK (SAI1 and SAI2 clock).
+	//LLSAI3CLK	output clock frequency = VCO frequency / PLLP with PLLP = 7
+	RCC->PLLCFGR 	&=~	(1U<<17);
+
+	//PLLQ[1:0]: Main PLL division factor for PLL48M1CLK (48 MHz clock).
+	//PLLCLK output clock frequency = VCO frequency / PLLR	with PLLQ = 2
+	RCC->PLLCFGR	&=~	(1U<<21);
+	RCC->PLLCFGR	&=~	(1U<<22);
 
 	//PLLR[1:0]: Main PLL division factor for PLLCLK = 2
 	//PLLCLK output clock frequency = VCO frequency / PLLR
